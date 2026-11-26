@@ -291,7 +291,7 @@ Los dos índices de la última columna son `deliveries(client_id)` y `delivery_i
   - 4 fases (~3.000 líneas) en 1 h 47 min, el mismo día.
   - Los PR tienen 0 revisiones en GitHub y los fusionó su propio autor entre 12 y 20 minutos después de abrirlos. Las correcciones aparecen como commits "Corregir hallazgos de la revisión", sin rastro de quién revisó ni de qué.
   - `main` sin protección en el fork.
-  - Upstream (MaxisotooH) y el fork (WaltherMoraRivera) tienen `main` distintos: los issues están en el fork y los PR en upstream, y DESPLIEGUE.md clona upstream.
+  - Upstream (MaxisotooH) y el fork (wmrDev) tienen `main` distintos: los issues están en el fork y los PR en upstream, y DESPLIEGUE.md clona upstream.
   - La rama de la Fase 4 parte de antes de OpenSpec.
   - Los commits son descriptivos, en español y sin convención.
   - Hay 2.705 líneas de skills de OpenSpec duplicadas entre `.claude/` y `.agents/`, y además entran al paquete que se entrega (CAL-04).

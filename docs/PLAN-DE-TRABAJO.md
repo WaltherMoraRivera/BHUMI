@@ -1,7 +1,7 @@
 # Análisis y plan de trabajo de BHUMI
 
 Fecha: 2026-11-26 · Base analizada: `main` (fases 1 a 3) y la rama `fase-4/bodega-piloto` (PR 4 del repositorio original, abierto).
-Los issues viven en el fork `WaltherMoraRivera/BHUMI`.
+Los issues viven en el fork `wmrDev/BHUMI`.
 
 ## De qué trata
 
@@ -69,26 +69,26 @@ Esfuerzo **Bajo / Medio / Alto** = nivel de razonamiento del agente (low / mediu
 
 | # | Issue | Hito | Modelo | Esfuerzo |
 |---|---|---|---|---|
-| [1](https://github.com/WaltherMoraRivera/BHUMI/issues/1) | Integrar OpenSpec: specs base y flujo de cambios | M0 | Sonnet | Bajo |
-| [2](https://github.com/WaltherMoraRivera/BHUMI/issues/2) | Scripts de prueba fallan en Windows | M0 | Haiku | Bajo |
-| [3](https://github.com/WaltherMoraRivera/BHUMI/issues/3) | Linter y formateador con CI | M0 | Sonnet | Medio |
-| [4](https://github.com/WaltherMoraRivera/BHUMI/issues/4) | Plantillas de issue/PR y CONTRIBUTING | M0 | Haiku | Bajo |
-| [5](https://github.com/WaltherMoraRivera/BHUMI/issues/5) | Definir la licencia | M0 | Haiku | Bajo |
-| [6](https://github.com/WaltherMoraRivera/BHUMI/issues/6) | Revisión de código de la Fase 4 | M1 | Opus | Alto |
-| [7](https://github.com/WaltherMoraRivera/BHUMI/issues/7) | Cerrar la Fase 4 (CI 22.13, integrar, archivar) | M1 | Haiku | Bajo |
-| [8](https://github.com/WaltherMoraRivera/BHUMI/issues/8) | Infraestructura del piloto | M2 | Sonnet | Medio |
-| [9](https://github.com/WaltherMoraRivera/BHUMI/issues/9) | Prueba de humo (reconexión tras 502) | M2 | Sonnet | Medio |
-| [10](https://github.com/WaltherMoraRivera/BHUMI/issues/10) | Simulacro de restauración Litestream | M2 | Sonnet | Medio |
-| [11](https://github.com/WaltherMoraRivera/BHUMI/issues/11) | Evaluar el piloto y priorizar | M2 | Opus | Medio |
-| [12](https://github.com/WaltherMoraRivera/BHUMI/issues/12) | Dividir `server/api.js` | M3 | Opus | Alto |
-| [13](https://github.com/WaltherMoraRivera/BHUMI/issues/13) | Migraciones versionadas | M3 | Opus | Alto |
-| [14](https://github.com/WaltherMoraRivera/BHUMI/issues/14) | CSP y encabezados de seguridad | M3 | Sonnet | Medio |
-| [15](https://github.com/WaltherMoraRivera/BHUMI/issues/15) | Filtrar avisos SSE por rol | M3 | Sonnet | Medio |
-| [16](https://github.com/WaltherMoraRivera/BHUMI/issues/16) | Bodega sin costos con lista permitida | M3 | Opus | Medio |
-| [17](https://github.com/WaltherMoraRivera/BHUMI/issues/17) | Pruebas end-to-end en navegador | M3 | Sonnet | Alto |
-| [18](https://github.com/WaltherMoraRivera/BHUMI/issues/18) | Actualizar Express 5, PDFKit, Chart.js | M3 | Sonnet | Medio |
-| [19](https://github.com/WaltherMoraRivera/BHUMI/issues/19) | Tipado con JSDoc + checkJs | M3 | Sonnet | Medio |
-| [20](https://github.com/WaltherMoraRivera/BHUMI/issues/20) | Evaluar PostgreSQL + PostGIS | M4 | Opus | Alto |
-| [21](https://github.com/WaltherMoraRivera/BHUMI/issues/21) | Futuro de la versión de doble clic | M4 | Opus | Medio |
+| [1](https://github.com/wmrDev/BHUMI/issues/1) | Integrar OpenSpec: specs base y flujo de cambios | M0 | Sonnet | Bajo |
+| [2](https://github.com/wmrDev/BHUMI/issues/2) | Scripts de prueba fallan en Windows | M0 | Haiku | Bajo |
+| [3](https://github.com/wmrDev/BHUMI/issues/3) | Linter y formateador con CI | M0 | Sonnet | Medio |
+| [4](https://github.com/wmrDev/BHUMI/issues/4) | Plantillas de issue/PR y CONTRIBUTING | M0 | Haiku | Bajo |
+| [5](https://github.com/wmrDev/BHUMI/issues/5) | Definir la licencia | M0 | Haiku | Bajo |
+| [6](https://github.com/wmrDev/BHUMI/issues/6) | Revisión de código de la Fase 4 | M1 | Opus | Alto |
+| [7](https://github.com/wmrDev/BHUMI/issues/7) | Cerrar la Fase 4 (CI 22.13, integrar, archivar) | M1 | Haiku | Bajo |
+| [8](https://github.com/wmrDev/BHUMI/issues/8) | Infraestructura del piloto | M2 | Sonnet | Medio |
+| [9](https://github.com/wmrDev/BHUMI/issues/9) | Prueba de humo (reconexión tras 502) | M2 | Sonnet | Medio |
+| [10](https://github.com/wmrDev/BHUMI/issues/10) | Simulacro de restauración Litestream | M2 | Sonnet | Medio |
+| [11](https://github.com/wmrDev/BHUMI/issues/11) | Evaluar el piloto y priorizar | M2 | Opus | Medio |
+| [12](https://github.com/wmrDev/BHUMI/issues/12) | Dividir `server/api.js` | M3 | Opus | Alto |
+| [13](https://github.com/wmrDev/BHUMI/issues/13) | Migraciones versionadas | M3 | Opus | Alto |
+| [14](https://github.com/wmrDev/BHUMI/issues/14) | CSP y encabezados de seguridad | M3 | Sonnet | Medio |
+| [15](https://github.com/wmrDev/BHUMI/issues/15) | Filtrar avisos SSE por rol | M3 | Sonnet | Medio |
+| [16](https://github.com/wmrDev/BHUMI/issues/16) | Bodega sin costos con lista permitida | M3 | Opus | Medio |
+| [17](https://github.com/wmrDev/BHUMI/issues/17) | Pruebas end-to-end en navegador | M3 | Sonnet | Alto |
+| [18](https://github.com/wmrDev/BHUMI/issues/18) | Actualizar Express 5, PDFKit, Chart.js | M3 | Sonnet | Medio |
+| [19](https://github.com/wmrDev/BHUMI/issues/19) | Tipado con JSDoc + checkJs | M3 | Sonnet | Medio |
+| [20](https://github.com/wmrDev/BHUMI/issues/20) | Evaluar PostgreSQL + PostGIS | M4 | Opus | Alto |
+| [21](https://github.com/wmrDev/BHUMI/issues/21) | Futuro de la versión de doble clic | M4 | Opus | Medio |
 
 **Ruta crítica al piloto:** 6 → 7 → 8 → 9 → 11. Lo de M0 puede avanzar en paralelo; M3 conviene después de integrar la Fase 4 para no generar conflictos con su PR.

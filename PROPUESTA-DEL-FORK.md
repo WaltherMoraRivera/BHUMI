@@ -1,9 +1,9 @@
-# Propuesta del fork WaltherMoraRivera/BHUMI
+# Propuesta del fork wmrDev/BHUMI
 
 Documento para el autor de BHUMI y para su agente. Resume lo que agrega este fork y lo que propone, y deja al autor la decisión: **unir el fork completo, integrar solo algunas partes, o ninguna de las dos**.
 
 - Repositorio original: `MaxisotooH/BHUMI` (en este documento, *upstream*).
-- Fork: `WaltherMoraRivera/BHUMI` (en este documento, *fork*).
+- Fork: `wmrDev/BHUMI` (en este documento, *fork*).
 - Fecha: 2026-11-26. Base de upstream analizada: `01a620d` (Merge PR 3, Fase 3). Rama de la Fase 4 analizada: `fase-4/bodega-piloto` @ `7534c48`, PR 4 de upstream, abierto.
 - **Estado del fork: congelado.** No se escribe código de la aplicación ni se avanza en ningún issue hasta que el autor defina el contexto del negocio y el alcance.
 
@@ -15,7 +15,7 @@ Trabaja en el clon de upstream, sin modificar nada hasta que el autor decida.
 
 1. Agrega el fork como remoto y trae sus ramas:
    ```bash
-   git remote add fork https://github.com/WaltherMoraRivera/BHUMI.git
+   git remote add fork https://github.com/wmrDev/BHUMI.git
    git fetch fork
    ```
 2. Comprueba que el fork solo **agrega** archivos (no modifica ni borra nada de upstream):
