@@ -1,0 +1,59 @@
+schema: spec-driven
+
+context: |
+  Language: es
+  All artifacts must be written in es.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+  Proyecto: BHUMI, sistema de control y reducción de costos de transporte y
+  distribución para una empresa chilena (base en Quinta Normal, Santiago).
+  Responde cuánto cuesta realmente entregar, cómo rinden el equipo y la flota,
+  qué ruta y qué vehículo conviene, y cuánto se puede ahorrar.
+
+  Stack: Node.js >= 22.13 (ESM), Express 4, SQLite con node:sqlite (servidor)
+  y sql.js/WebAssembly (versión de navegador), Chart.js, ExcelJS, PDFKit.
+  Interfaz en JavaScript simple sin compilación (public/js/views/*.js con la
+  plantilla html`` de lib.js). esbuild solo arma los .html de doble clic.
+  Google Maps Platform (Maps JS, Geocoding, Routes) es la única fuente de
+  distancias y tiempos.
+
+  Tres modos de ejecución que comparten el mismo código de server/:
+    1. Doble clic ("Abrir BHUMI.html"): todo dentro del navegador, un usuario,
+       sin login, datos en el navegador (navegador/ simula Express y SQLite).
+    2. Demostración ("Abrir DEMO.html" o npm run demo): datos y Google simulados,
+       en memoria.
+    3. Servidor central (Docker + Caddy + Litestream): multiusuario con login,
+       roles (admin, planificador, bodega), auditoría y tiempo real (SSE).
+
+  Reglas del proyecto que toda propuesta debe respetar:
+    - Solo datos reales: si falta un dato, el indicador queda en blanco y se
+      explica qué falta. Nunca cifras inventadas ni distancias de respaldo.
+    - Solo Google Maps para rutas, distancias y geocodificación.
+    - Toda regla de permisos se decide en el servidor; la interfaz solo oculta.
+    - Las columnas nuevas de la base se agregan sin perder datos ya guardados
+      (las bases existentes se actualizan solas).
+    - Cualquier cambio en server/ debe pasar los cuatro modos de prueba:
+      npm test, test:local, test:navegador y test:wasm.
+    - Textos de interfaz, documentación y mensajes de commit en español.
+
+  Hitos del plan de trabajo (milestones del fork):
+    M0 Bases y organización · M1 Fase 4 e integración · M2 Piloto en producción ·
+    M3 Calidad y deuda técnica · M4 Fase 5 Escalabilidad.
+
+rules:
+  proposal:
+    - Indicar qué modos de ejecución afecta (doble clic, demo, servidor central).
+    - Indicar qué roles ven o pueden usar el cambio.
+    - Declarar explícitamente lo que queda fuera de alcance.
+  specs:
+    - Incluir al menos un escenario de "falta un dato" cuando el requisito calcula una cifra.
+    - Incluir un escenario por rol cuando el requisito depende de permisos.
+  tasks:
+    - Incluir una tarea final que corra las cuatro formas de prueba y npm run construir.
+    - Tareas de a lo más 2 horas de trabajo cada una.
+
+operations:
+  apply:
+    guidance:
+      - Mantener compatibilidad con bases existentes (COLUMNAS_NUEVAS en server/db.js).
+      - Probar como Bodega cualquier pantalla que lea campos de costo (usar ?.).
