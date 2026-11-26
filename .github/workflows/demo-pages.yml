@@ -1,0 +1,65 @@
+# Publica el modo demostración en GitHub Pages para que los clientes lo prueben desde una URL.
+#
+# Solo se publica "Abrir DEMO.html" (renombrado a index.html): datos y Google simulados, todo en memoria.
+# Nunca se publica dist/BHUMI completo: "Abrir BHUMI.html" es la versión real y "codigo-fuente/"
+# copia el directorio de trabajo entero (ver CAL-04 en docs/auditoria/calidad-operacion.md).
+# Se arma en un checkout limpio de GitHub, nunca desde un equipo local.
+name: Demo en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: demo-pages
+  cancel-in-progress: true
+
+jobs:
+  armar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13'
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Armar la versión de doble clic
+        run: npm run construir
+
+      - name: Preparar el sitio (solo la demo)
+        run: |
+          mkdir -p _site
+          cp "dist/BHUMI/Abrir DEMO.html" _site/index.html
+          # Que los buscadores no indexen la demo: la URL se comparte solo con quien se invite.
+          sed -i '0,/<head>/s//<head>\n  <meta name="robots" content="noindex, nofollow">/' _site/index.html
+          grep -q 'name="robots"' _site/index.html
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          touch _site/.nojekyll
+          # Control: el sitio solo puede tener estos tres archivos.
+          test "$(find _site -type f | wc -l)" -eq 3
+          ls -la _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    needs: armar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4
